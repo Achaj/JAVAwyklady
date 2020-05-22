@@ -11,9 +11,9 @@ package Zad_2;
  */
 public class Student extends Person {
 
-    String speciality;
-    int indexnumer;
-    int yerofstudy;
+    private String speciality;
+    private int indexnumer;
+    private int yerofstudy;
 
     public Student(String speciality, int indexnumer, int yerofstudy, String name, String surename, String educationlevel, int age) {
         super(name, surename, educationlevel, age);
