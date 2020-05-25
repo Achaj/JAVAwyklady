@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Zad_1;
-import java.lang.Comparable;
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.Arrays;
 
