@@ -1,1 +1,12 @@
-ZiembaZiemba,22,190,100
+Jan,Stepien,20,183,80
+Pawel,Kowalski,25,175,82
+Radek,Ptak,30,189,84
+Hubert,Serafin,29,170,89
+Janusz,Gawron,45,160,85
+Krzysztof,Ziemba,22,190,100
+Jan,Stepien,20,183,80
+Pawel,Kowalski,25,175,82
+Radek,Ptak,30,189,84
+Hubert,Serafin,29,170,89
+Janusz,Gawron,45,160,85
+Krzysztof,Ziemba,22,190,100
