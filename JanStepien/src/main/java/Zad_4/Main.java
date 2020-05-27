@@ -32,40 +32,38 @@ public class Main {
         int serchDataInt;
         int controlVariable;
         boolean znaleziono=false;
-       
-      try {
-            File file = new File("dane.txt");
-            if (!file.exists()) {
-                file.createNewFile();
-                try {
-                    for(int i=0;i<osoba.size();i++){
-                        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-                            bw.write(osoba.get(i).getSureName() + osoba.get(i).getSureName() + "," + String.valueOf(osoba.get(i).getAge()) + "," + String.valueOf(osoba.get(i).getHeight()) + "," + String.valueOf(osoba.get(i).getWage()));
-                            bw.newLine();
-                            bw.close();
-                        }
-                    }
-                } catch (IOException e) {
-                    e.getMessage();
-                }
-            } else {
-                try {
-                    for(int i=0;i<osoba.size();i++){
-                        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
-                            bw.write(osoba.get(i).getSureName() + osoba.get(i).getSureName() + "," + String.valueOf(osoba.get(i).getAge()) + "," + String.valueOf(osoba.get(i).getHeight()) + "," + String.valueOf(osoba.get(i).getWage()));
-                            bw.newLine();
-                            bw.close();
-                        }
-                    }
-                } catch (IOException e) {
-                    e.getMessage();
-                }
-
+         FileWriter file=null;
+         BufferedWriter bw=null;
+        
+       try {
+            file = new FileWriter("dane.txt");
+            bw = new BufferedWriter(file);
+            for(int i=0;i<osoba.size();i++){
+                    bw.write(osoba.get(i).getName() +","+ osoba.get(i).getSureName() + "," + String.valueOf(osoba.get(i).getAge()) + "," + String.valueOf(osoba.get(i).getHeight()) + "," + String.valueOf(osoba.get(i).getWage()));
+                    bw.newLine();        
             }
+            bw.close();
+            file.close();
+                
         }catch(IOException e){
-            e.getMessage();
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+             System.exit(0);
         }
-
+       finally{
+           try{
+               if(bw!=null){
+                   bw.close();
+               }
+               if(file!=null){
+                    file.close();
+               }
+             }catch(IOException e){
+                     
+                  System.out.println(e.getMessage());
+                  System.exit(0);
+            }
+       }
         
         System.out.println("Zadania:\n 1.Wyszukianie Danych\n 2.Wyszukiwanie max/min wartości\n 3.Sortowanie");
         controlVariable=input.nextInt();
